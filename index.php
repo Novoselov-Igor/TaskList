@@ -38,8 +38,13 @@
                         <div class="d-flex">
                             <form method="post" action="controllers/taskReadinessController.php">
                                 <button class="btn border border-secondary" name="cookie" value="<?= $key ?>">
-                                    <?php if ($value === 'false') {?> Ready
-                                    <?php } else { ?> Unready <?php } ?>
+                                    <?php
+                                    if ($value === 'false') {
+                                        printf('Ready');
+                                    } else {
+                                        printf('Unready');
+                                    }
+                                    ?>
                                 </button>
                             </form>
                             <form method="post" action="controllers/taskRemovalController.php" class="mx-2">
@@ -49,11 +54,13 @@
                         </div>
                     </div>
                     <div>
-                        <?php if ($value === 'false') { ?>
-                            <button class="btn border border-danger border-4 rounded-circle p-5"></button>
-                        <?php } else { ?>
-                            <button class="btn border border-success border-4  rounded-circle p-5"></button>
-                        <?php } ?>
+                        <?php
+                        if ($value === 'false') {
+                            printf('<button class="btn border border-danger border-4 rounded-circle p-5"></button>');
+                        } else {
+                            printf('<button class="btn border border-success border-4  rounded-circle p-5"></button>');
+                        }
+                        ?>
                     </div>
                 </div>
                 <?php
